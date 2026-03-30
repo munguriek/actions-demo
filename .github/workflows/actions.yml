@@ -1,2 +1,22 @@
-# This is a workflow
-test
+name: Hello World Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "Hello, World! 🚀"
+
+      - name: Run a script
+        run: |
+          echo "This is running inside GitHub Actions"
+          date
